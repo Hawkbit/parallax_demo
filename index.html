@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating a Simple Parallax Scrolling Website</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+    <script>
+    $(document).ready(function() {
+        $('a[href*=#]').each(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname &&
+                this.hash.replace(/#/, '')) {
+                var $targetId = $(this.hash),
+                    $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
+                var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+                if ($target) {
+                    var targetOffset = $target.offset().top;
+                    $(this).click(function() {
+                        $("#nav li a").removeClass("active");
+                        $(this).addClass('active');
+                        $('html, body').animate({ scrollTop: targetOffset }, 1000);
+                        return false;
+                    });
+                }
+            }
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <!-- HEADER BEGIN -->
+    <header id="header">
+        <div class="content">
+            <div id="logo"><a href=""> Kit Stephens </a></div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#slide1" class="active" title="Next Section">Kit</a></li>
+                    <li><a href="#slide2" title="Next Section">About Kit</a></li>
+                    <li><a href="#slide3" title="Next Section">Friendly Skies</a></li>
+                    <li><a href="#slide4" title="Next Section">Friendly Skies Travel Guide</a></li>
+                    <li><a href="#slide5" title="Next Section">Purchase</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- HEADER END -->
+    <!--- SLIDES BEGIN -->
+    <div id="slide1">
+        <div class="content">
+            <div id=""> </div>
+            <div id=""></div>
+            <div id=""></div>
+            <h2>Come Fly</h2>
+            <h1>The Friendly Skies</h1>
+        </div>
+    </div>
+    <div id="slide2">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">Kit Stephens is a mom, wife, attorney, writer, and personal assistant to 3 cats and a dog in Seattle, Washington. When she’s not working, writing and mothering, she reads. Except during the fall, when she watches football rather obsessively.</h3>
+                <img src="" align="left" />
+                <h4 class="author_name_gray"></h4>
+            </div>
+        </div>
+    </div>
+    <div id="slide3">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes"></h3>
+                <img src="" align="left" />
+                <h4 class="author_name_white"></h4>
+            </div>
+        </div>
+    </div>
+    <div id="slide4">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes"><p>If you decide to visit the locations of Friendly Skies, start with West Seattle beaches. Alki Point provides a view of downtown Seattle and the Cascades to the east, the Olympics to the west, and Mount Rainier to the south, in addition to the gorgeous Puget Sound. Traveling more westward from Alki, Constellation Park lends a gorgeous western Sound and Olympics view, and is the view Jason has from his living room. Next go to the Waterfront, downtown Seattle. This is where Judy goes to mull over her divorce after she returns to Seattle from Catalina Island. The famous Pike Market is here, as is the ferris wheel and a variety of places to sit and ponder, while watching the ferries and ship traffic in Elliott Bay. Anywhere on the Oregon Coast. Jason’s day trip with Judy was my favorite scene to write. The specific inspiration for that scene was Pacific City, OR (see above photo), but I’ve seen the entire coast, and any spot you’d choose will be spectacular. Finally, Catalina Island, CA. No explanation necessary.</p>
+                    </ul>
+                </h3>
+                <img src="" align="left" />
+                <h4 class="author_name_gray"></h4>
+            </div>
+        </div>
+    </div>
+    <div id="slide5">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">
+                    Friendly Skies available on 12.23.17 at Amazon in the following formats:
+                    <a href="https://www.amazon.com/Friendly-Skies-Kit-Stephens/dp/0999521209/ref=sr_1_2?ie=UTF8&amp;qid=1515101703&amp;sr=8-2&amp;keywords=friendly+skies">Paperback</a>
+                    <a href="https://www.amazon.com/Friendly-Skies-Kit-Stephens-ebook/dp/B078LBP3GS/ref=sr_1_3?ie=UTF8&amp;qid=1515101703&amp;sr=8-3&amp;keywords=friendly+skies">Kindle Edition</a>
+                </h3>
+                <img src="" align="left" />
+                <h4 class="author_name_white"></h4>
+            </div>
+            <div id="copyright"><a href="https://shawnshrader.com"> Copyright 2018: 10 Panes </a></div>
+        </div>
+    </div>
+    <!--- SLIDES END -->
+</body>
+
+</html>
